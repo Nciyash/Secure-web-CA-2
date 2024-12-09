@@ -22,6 +22,7 @@ $psname=$pdata[1];
  $height=$_POST['height'];
  $weight=$_POST['weight'];
  $dob=$_POST['dob'];
+
  $email=$_POST['email'];
  $address=$_POST['address'];
  $city=$_POST['city'];
@@ -266,12 +267,17 @@ foreach($result2 as $row)
 										<div class="form-group">
 											<label class="col-sm-3 control-label">Date of Birth<span class="required">*</span></label>
 											<div class="col-sm-3">
-												<input type="date" class="form-control"  name="dob" value="" required='true'>
+											
+												<input type="date" class="form-control"  name="dob" value="$dob=date_create("2023-12-05");
+                                            echo date_format($date,"Y/m/d");" required='true'>
 											</div>
-											<label class="col-sm-3 control-label">Email<span class="required">(if any)</span></label>
+											
+											<label class="col-sm-3 control-label">Email<span class="required"></span></label>
 											<div class="col-sm-3">
 												<input type="text" class="form-control"  name="email" value="" >
+												
 											</div>
+											
 										</div>
 										
 										<div class="form-group">
