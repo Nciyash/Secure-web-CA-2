@@ -55,6 +55,11 @@ ini_set('session.cookie_samesite', 'Strict');
 <script src="../assets/vendor/modernizr/modernizr.js"></script>
 </head>
 <body>
+						<script>
+							function enablesubmitbtn() {
+								document.getElementById("submit").disabled = false;
+							}
+						</script>
 <a href="../index.php" class="logo pull-left"><h2 style="padding-top: 30px;padding-left: 30px;color: blue"><i class="fa fa-home"></i></h2></a>
 <section class="body-sign">
 	<div class="center-sign">
@@ -95,7 +100,9 @@ ini_set('session.cookie_samesite', 'Strict');
 					</div>
 					<div class="row">
 						<div class="col-sm-4 text-left">
-							<button type="submit" class="btn btn-primary hidden-xs" name="login">Sign In</button>
+							<div class="form-group">
+								<div class="g-recaptcha" data-sitekey="6Lcnn5EqAAAAAPPAlTqjznykTMTrj44vj5ZVxsXM"></div><br>
+							<button type="submit" class="btn btn-primary hidden-xs" disabled="disabled" name="login">Sign In</button>
 						</div>
 					</div>
 				</form>
@@ -105,6 +112,7 @@ ini_set('session.cookie_samesite', 'Strict');
 </section>
 <!-- end: page -->
 <!-- Vendor -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="../assets/vendor/jquery/jquery.js"></script>
 <script src="../assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
 <script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>

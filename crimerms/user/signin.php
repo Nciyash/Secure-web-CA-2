@@ -88,6 +88,7 @@ if(isset($_POST['login']))
 						</div>
 						<div class="input-group input-group-icon">
 							<input type="password" class="form-control input-md" name="password" required="true" value="" placeholder="Password">
+
 							<span class="input-group-addon">
 								<span class="icon icon-md">
 									<i class="fa fa-lock"></i>
@@ -95,13 +96,19 @@ if(isset($_POST['login']))
 							</span>
 						</div>
 					</div>
-
+					<!-- Google reCAPTCHA block -->
 					<div class="row">
-						<div class="col-sm-4 text-left">
-							<button type="submit" class="btn btn-primary hidden-xs" name="login">Sign In</button>
+					<div class="col-sm-4 text-left">
+					<div class="g-recaptcha" data-sitekey="6Lcnn5EqAAAAAPPAlTqjznykTMTrj44vj5ZVxsXM" data-callback="enablesubmitbtn"></div><br>
+					<script>
+						function enablesubmitbtn() {
+							document.getElementById("submit").disabled = false;
+						}
+					</script>
+					<input type="submit" id="submit" disabled="disabled"  class="btn btn-primary hidden-xs" name="login" >Sign In<br><br>
 						</div>
 					</div>
-					
+					<!-- End Google reCAPTCHA block -->
 					<span class="mt-lg mb-lg line-thru text-center text-uppercase">
 						<span>or</span>
 					</span>
@@ -115,6 +122,7 @@ if(isset($_POST['login']))
 <!-- end: page -->
 
 <!-- Vendor -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="../assets/vendor/jquery/jquery.js"></script>
 <script src="../assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
 <script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
