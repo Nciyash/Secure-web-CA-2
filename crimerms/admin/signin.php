@@ -54,11 +54,7 @@ if(isset($_POST['login']))
 <script src="../assets/vendor/modernizr/modernizr.js"></script>
 </head>
 <body>
-<script>
-		function enablesubmitbtn() {
-		document.getElementById("submit").disabled = false;
-		}
-</script>
+
 <a href="../index.php" class="logo pull-left"><h2 style="padding-top: 30px;padding-left: 30px;color: blue"><i class="fa fa-home"></i></h2></a>
 <section class="body-sign">
 	<div class="center-sign">
@@ -109,7 +105,12 @@ if(isset($_POST['login']))
 					</div>
 						<div class="col-sm-12 text-center">
 							<div class="g-recaptcha" data-sitekey="6Lcnn5EqAAAAAPPAlTqjznykTMTrj44vj5ZVxsXM" data-callback="enablesubmitbtn"></div><br>
-							<button type="submit" class="btn btn-primary" disabled="disabled" name="login">Sign In</button>
+							<script>
+									function enablesubmitbtn() {
+									document.getElementById("signin").disabled = false;
+									}
+							</script>
+							<button type="submit" id="signin" class="btn btn-primary" disabled="disabled" name="login">Sign In</button>
 						</div>
 					</div>
 				</form>
